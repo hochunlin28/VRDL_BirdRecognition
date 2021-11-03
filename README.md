@@ -1,5 +1,6 @@
 # VRDL_BirdRecognition
-This is homework 1 of VRDL class. I use efficientNet to train the model
+
+This is homework 1 of VRDL class. I use efficientNet to train the model.
 
 * main.py: the trainig code
 
@@ -12,7 +13,7 @@ This is homework 1 of VRDL class. I use efficientNet to train the model
 * testing_img_order.txt: the testing image name's order for generating the corresponding submission
 
 
-## 1. Specification (Environment Settings)
+## Specification (Environment Settings)
 To install requirements:
 ```
 pip install -r requirements.txt
@@ -39,7 +40,7 @@ conda install pytorch torchvision torchaudio cudatoolkit=11.3 -c pytorch
 
 > pytorch download website: https://pytorch.org/get-started/locally/
 
-## 2. Training code
+## Training code
 To train the model, run this command:
 ```
 python main.py
@@ -59,14 +60,14 @@ python main.py
 >    
 >    - epoch: 50 
 
-## 3. Evaluation code
+## Evaluation code
 To evaluate model by given testing data, run:
 ```
 python inference.py
 ```
 > After running this code, the program will load the "saveModel.pt" model to evaluate the answer. As the program finished, it wiil produce the "answer.txt" file.
 
-## 4. Pre-trained models
+## Pre-trained models / weights
 We used effiecientnet pretrained weight (efficientnet-b1) to train
 - Can download weight from here : https://github.com/lukemelas/EfficientNet-PyTorch/releases?fbclid=IwAR3kk1dW3WEduBUa5b_cRs-rwfI826_7tkf7BUTV2xOVX1fdL5TFdn_bngE
 ```
@@ -74,3 +75,10 @@ In main.py:
 
 model = EfficientNet.from_pretrained('efficientnet-b1')
 ```
+
+## Results
+My model achieves the following performance on :
+### [2021 VRDL HW1 of CodaLab Competion](https://competitions.codalab.org/competitions/35668?secret_key=09789b13-35ec-4928-ac0f-6c86631dda07)
+| Model name         | Accuracy  | StudentID | Name  |
+| ------------------ |-----------|-----------|-------|
+| My model           |  70.821%  | 310551098 | 林和俊 | 
