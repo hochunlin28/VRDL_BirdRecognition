@@ -9,9 +9,10 @@ This is homework 1 of VRDL class. I use efficientNet to train the model
 
 
 ## 1. Specification (Environment Settings)
-use below command to construct the environment
-
-> $ pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
+> use this command to construct the environment
 
 Q1: If it cannot download efficientNet, it have to download from github:
 
@@ -35,3 +36,7 @@ use below command to start training
 
 ### data augmentation 
 use transforom.compose 
+
+## 3. Evaluation code
+
+## 4. Pre-trained models
