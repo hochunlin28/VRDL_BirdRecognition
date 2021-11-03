@@ -26,14 +26,7 @@ model.eval()
 with open('testing_img_order.txt') as f:
      test_images = [x.strip() for x in f.readlines()]  # all the testing images
 
-''' 
-data_transf = transforms.Compose([
-transforms.RandomHorizontalFlip(p=0.5),
-transforms.RandomRotation([-15,15], expand=False, center = (112,112)), 
-transforms.CenterCrop([350, 300]),
-transforms.Resize([224,224]),
-transforms.ToTensor()])
-'''    
+# transformation to testing images   
 data_transf = transforms.Compose([transforms.CenterCrop([350, 300]),
 transforms.Resize([224,224]),
 transforms.ToTensor()])
@@ -48,7 +41,6 @@ for img_dir in test_images:  # image order is important to your result
     predicted_class = model(img)  # the predicted category
     n = nn.Softmax(dim=1) # use softmax to easily recognize answer
     predicted_class = n(predicted_class)
-    print(predicted_class.max(1)[1].cpu().item()) # print predicted index
     submission.append([img_dir, table[0][predicted_class.max(1)[1].cpu().item()]])
 
 #save answer
