@@ -1,7 +1,7 @@
 '''
 hyperparameter setting:
     model : efficientnet
-    learing rate: 0.0002
+    learning rate: 0.0002
     optimizer: Adam
     loss function: cross entropy loss
     batch size: 22
@@ -57,6 +57,7 @@ class ImageData(Dataset):
         return image, label
 
 #use dataloader to generate training dataset
+'''
 data_augmentation = transforms.RandomChoice([
 transforms.RandomHorizontalFlip(p=0.5),
 transforms.RandomRotation([-15,15], expand=True),
@@ -66,22 +67,21 @@ data_transf = transforms.Compose([
 data_augmentation,
 transforms.Resize([224,224]),
 transforms.ToTensor()])
-
 '''
+
 data_transf = transforms.Compose([
 transforms.RandomHorizontalFlip(p=0.5),
 transforms.RandomRotation([-15,15], expand=True), 
 transforms.CenterCrop([350, 310]),
 transforms.Resize([224,224]),
 transforms.ToTensor()])
-'''
+
 
 train_data = ImageData(df = labels, data_dir = train_dir, transform = data_transf)
 train_loader = DataLoader(dataset = train_data, batch_size = 22, shuffle = True)
 
 #load model from pretrained
 model = EfficientNet.from_pretrained('efficientnet-b1')
-#model = torch.load("./save.pt")
 print("load_success")
 
 #unfreeze model weights
@@ -107,10 +107,6 @@ for epoch in range(50):
     model.train()
     train_correct = 0    
     for ii, (data, target) in enumerate(train_loader):
-        #target = np.array(target).astype(float)
-        #target = torch.from_numpy(target)
-        #target = target.float()                
-
         data, target = data.cuda(), target.cuda()
         optimizer.zero_grad()
         output = model(data)
