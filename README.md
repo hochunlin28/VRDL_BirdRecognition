@@ -76,6 +76,7 @@ In main.py:
 model = EfficientNet.from_pretrained('efficientnet-b1')
 ```
 Final, I saved the model as saveModel.pt file. 
+
 downloadable link: https://drive.google.com/file/d/1H1CGvn_vzVStxD4Nzx5wyp-7YQtM8Sb8/view?usp=sharing
 
 ## Results
