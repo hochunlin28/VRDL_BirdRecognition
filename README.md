@@ -6,7 +6,7 @@ This is homework 1 of VRDL class. I use efficientNet to train the model.
 
 * inference.py: the testing code of particular presaved model
  
-* savedModel.pt: the final model I trained 
+* savedModel.pt: the model saved from training result
 
 * training_labels.txt: include the training image name and its corresponding label
 
@@ -75,7 +75,8 @@ In main.py:
 
 model = EfficientNet.from_pretrained('efficientnet-b1')
 ```
-My saved model downloadable link: https://drive.google.com/file/d/1H1CGvn_vzVStxD4Nzx5wyp-7YQtM8Sb8/view?usp=sharing
+Final, I saved the model as saveModel.pt file. 
+downloadable link: https://drive.google.com/file/d/1H1CGvn_vzVStxD4Nzx5wyp-7YQtM8Sb8/view?usp=sharing
 
 ## Results
 My model achieves the following performance on :
